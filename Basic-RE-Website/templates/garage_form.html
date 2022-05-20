@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<h1>GARAGE FORM PLACEHOLDER</h1>
+<form action="#" method="post">
+
+    <div>
+        <label for="Ad_name">Advertisement name:</label>
+        <input id="Ad_name" type="text" name="Ad_name" required>
+    </div>
+
+    <div>
+        <label for="Ad_type">Advertisement type:</label>
+        <select name="Ad_type">
+            {% for activity in ['Sale', 'Rent'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+
+    </div>
+    
+    <div>
+        <label for="Price">Price:</label>
+        <input id="Price" type="number" name="Price" min="0" step="100" required>
+    </div>
+
+    <div>
+        <label for="City">City:</label>
+        <select name="City">
+            {% for activity in ['Kaunas', 'Vilnius', 'Palanga', 'Klaipėda', 'Other'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+
+    </div>
+
+    <div>
+        <label for="Address_line">Address:</label>
+        <input id="Address_line" type="text" name="Address_line" required>
+    </div>
+
+    <div>
+        <label for="Area">Area:</label>
+        <input id="Area" type="number" name="Area" min="0" step="0.1" required>
+    </div>
+
+    <div>
+        <label for="Building_type">Building type:</label>
+        <select name="Building_type">
+            {% for activity in ['Block', 'Monolithic', 'Brickwork', 'Wooden', 'Carcass', 'Other'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+    </div>
+
+    <div>
+        <label for="Cars_fit">Maximum amount of cars in the garage:</label>
+        <input id="Cars_fit" type="number" name="Cars_fit" min="0" step="1" required>
+    </div>
+
+    <div>
+        <label for="Hole">Hole:</label>
+        <select name="Hole">
+            {% for activity in ['1', '0'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+
+    </div>
+
+    <div>
+        <p>Description:</p>
+
+        <textarea id="Ad_description" name="Ad_description" rows="4" cols="50"></textarea>
+    </div>
+
+    <p><input type="submit" value="Create Ad"></p>
+
+
+</form>
+{% endblock %}

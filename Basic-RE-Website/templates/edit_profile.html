@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Register Page{% endblock %}
+
+{% block content %}
+<form action="#" method="post">
+    
+    <div>
+        <label for="Ad_name">Advertisement name:</label>
+        <input id="Ad_name" type="text" name="Ad_name" value="{{ad[0]}}" required>
+    </div>
+
+    <div>
+        <label for="Ad_type">Advertisement type:</label>
+        <select name="Ad_type">
+            {% for activity in ['Sale', 'Rent'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+    </div>
+
+    <div>
+        <label for="Price">Price:</label>
+        <input id="Price" type="number" name="Price" min="0" value={{ad[1]}} required>
+    </div>
+
+    <div>
+        <p>Description:</p>
+
+        <textarea id="Ad_description" name="Ad_description" rows="3" cols="50">{{ad[2]}}</textarea>
+    </div>
+
+    <p><input type="submit" value="Create Ad"></p>
+</form>
+{% endblock %}
