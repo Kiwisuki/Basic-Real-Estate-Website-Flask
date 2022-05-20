@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<form action="#" method="post">
+
+    <div>
+        <label for="Ad_type">Advertisement type:</label>
+        <select name="Ad_type">
+            {% for activity in ['Sale', 'Rent'] %}
+                <option value="{{ activity }}">{{ activity }}</option>
+            {% endfor %}
+          </select>
+
+    <p><input type="submit" value="Show stats"></p>
+</form>
+{% endblock %}
